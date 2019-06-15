@@ -14,17 +14,13 @@
                       6436376337343466310a643631336638376366303262343238653130663137363965663739613663
                       3737
   
+                      
   tasks:
           # --Install HTTPD, MariaDB and PHP--
           - name: Install HTTPD, MariaDB and PHP
-            yum: name={{ item }} state=latest
-            with_items:
-                    - httpd
-                    - '@mariadb'
-                    - '@mariadb-server'
-                    - php
-                    - php-mysql
-                    - firewalld
+            yum: 
+                    name: ['httpd', '@mariadb', '@mariadb-server', 'php', 'php-mysql', 'firewalld', 'expect']
+                    state: latest
             notify: 
                     - Enable & Restart HTTPD
                     - Enable & Restart mariadb
@@ -33,7 +29,6 @@
 
           - name: Flush Services
             meta: flush_handlers
-
 
 
           - name: Configure MariaDB
@@ -52,8 +47,6 @@
                     - Enable & Restart mariadb
 
 
-
-
             # ---This will create info.php file to test PHP---          
           - name: Create test file to test PHP
             lineinfile: 
@@ -63,6 +56,7 @@
                     create: yes 
                     state: present
 
+                            
           - name: Edit firewall rules
             firewalld: service={{ item }} permanent=yes state=enabled
             with_items:
@@ -71,9 +65,6 @@
                     - mysql
             notify:
                     - Enable & Restart firewalld
-
-
-
 
 
   handlers:
