@@ -1,12 +1,17 @@
 # Basic LAMP Installation
 
-### What it does:
-- ##### Installation:
+#### Prerequisite
+ - This playbook was written and tested on CentOS 7
+ - Ansible module `expect` is required. Will be installed with yum module
+
+
+#### Installation:
  - HTTPD
  - MariaDB
  - PHP
 
-- ##### Configuration:
+
+#### Configuration:
 1. Mariadb configuration options:
 
   | Configuration  | Setting |
@@ -25,9 +30,6 @@
 
 3. Adding `httpd, https, mysql` to firewall exception
 
-- #### Prerequisite
- - This playbook was written and tested on CentOS 7
- - Ansible module `expect` is required. Will be installed with yum module
 
 
 ### Other Notes
@@ -36,6 +38,7 @@
 *Reference:
 https://docs.ansible.com/ansible/latest/user_guide/vault.html*
 
+
 ### Running
-`ansible-playbook lampstack.yml --ask-vault-pass `
+`ansible-playbook lampstack.yml --ask-vault-pass`
 
