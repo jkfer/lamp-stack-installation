@@ -1,6 +1,6 @@
 # Basic LAMP Installation
 
-#### What it does:
+### What it does:
 - ##### Installation:
  - HTTPD
  - MariaDB
@@ -9,16 +9,16 @@
 - ##### Configuration:
 1. Mariadb configuration options:
 
-| Configuration  | Setting |
-| -------------- | ------- |
-| Root password | '' |
-| Set root password | 'y' |
-| New password | '{{ mysql_password }}' |
-| Re-enter new password | '{{ mysql_password }}' |
-| Remove anonymous users | 'y' |
-| Disallow root login remotely  | 'n' |
-| Remove test database and access to it | 'n' |
-| Reload privilege tables now | 'y' |
+  | Configuration  | Setting |
+  | -------------- | ------- |
+  | Root password | '' |
+  | Set root password | 'y' |
+  | New password | '{{ mysql_password }}' |
+  | Re-enter new password | '{{ mysql_password }}' |
+  | Remove anonymous users | 'y' |
+  | Disallow root login remotely  | 'n' |
+  | Remove test database and access to it | 'n' |
+  | Reload privilege tables now | 'y' |
 
 2. Creating a PHP file to have the collection tested
 `/var/www/html/info.php`
@@ -31,7 +31,7 @@
 
 
 ### Other Notes
-- Vault and mysql password both set to *123456* for testing
+- Vault and mysql password (mysql_password) both set to *123456* for testing
 - For Mariadb, vault encrypted password included inside the playbook for use 
 *Reference:
 https://docs.ansible.com/ansible/latest/user_guide/vault.html*
