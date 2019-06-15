@@ -25,7 +25,7 @@
   | Remove test database and access to it | 'n' |
   | Reload privilege tables now | 'y' |
 
-2. Creating a PHP file to have the collection tested
+2. Creating a PHP file to have the connection and availability tested
 `/var/www/html/info.php`
 
 3. Adding `httpd, https, mysql` to firewall exception
